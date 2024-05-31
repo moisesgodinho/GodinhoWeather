@@ -1,0 +1,38 @@
+.hourlyForecast {
+  grid-area: hourlyForecast;
+  border-radius: 25px;
+  padding: 2vw;
+  background-color: #1c1c27;
+  opacity: 0.7;
+}
+
+.hourly {
+  display: flex;
+  gap: 0.5rem;
+}
+.hourlyContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #191922;
+  padding: 1rem 2rem 1rem 2rem;
+  border-radius: 15px;
+}
+.tittleHigh {
+  margin-bottom: 1rem;
+}
+.imgLi {
+  width: 3vw;
+}
+.textoLi {
+  margin-top: 1rem;
+}
+.ulHourly {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.5rem;
+}
+.listItem {
+  display: flex;
+  flex-direction: row;
+}
