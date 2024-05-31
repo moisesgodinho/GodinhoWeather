@@ -1,0 +1,32 @@
+.currentWeather {
+  grid-area: currentWeather;
+  border-radius: 25px;
+  padding: 2vw;
+  background-color: #1c1c27;
+  opacity: 0.7;
+}
+.tittle .climaNow {
+  margin-bottom: 1vh;
+}
+.climaNow {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.temperatura {
+  font-size: 6rem;
+}
+.graus {
+  font-size: 3rem;
+  padding: 0vw 1vw 0vw 0vw;
+}
+.imgPrevisao {
+  height: 16vh;
+  background-color: transparent;
+}
+.textoPrevisao {
+  text-transform: capitalize;
+}
+.cidade {
+  margin-top: 1vh;
+}
