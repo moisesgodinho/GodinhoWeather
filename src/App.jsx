@@ -1,35 +1,44 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useEffect, useState } from "react";
+import "./App.css";
+import Container from "./modules/Container";
+import CurrentWeather from "./modules/CurrentWeather";
+import FiveDaysForecast from "./modules/FiveDaysForecast";
+import Header from "./modules/Header";
+import HourlyForecast from "./modules/HourlyForecast";
+import TodaysHighLights from "./modules/TodaysHighLights";
+import getFormattedWeatherDate from "./services/weatherService";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [query, setQuery] = useState({ q: "barao de cocais" });
+  const [units, setUnits] = useState("metric");
+  const [weather, setWeather] = useState(null);
+
+  const getWeather = async () => {
+    await getFormattedWeatherDate({ ...query, units }).then((data) => {
+      setWeather(data);
+      console.log(data);
+    });
+  };
+
+  useEffect(() => {
+    getWeather();
+  }, [query, units]);
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Header setQuery={setQuery} setUnits={setUnits} />
+      <Container>
+        {weather && (
+          <>
+            <CurrentWeather weather={weather} />
+            <FiveDaysForecast title="Próximos 5 Dias" data={weather.daily} />
+            <HourlyForecast title="Próximas Horas" data={weather.hourly} />
+            <TodaysHighLights weather={weather} />
+          </>
+        )}
+      </Container>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
