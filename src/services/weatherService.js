@@ -10,7 +10,7 @@ const getWeatherData = (infoType, searchParams) => {
     return fetch(url).then((res) => res.json())
 }
 
-const iconUrlFromCode = (icon) => `src/assets/icons/04d.png`
+const iconUrlFromCode = (icon) => `./src/assets/icons/${icon}.png`
 
 const hpaToAtm = (pressure) => pressure / 1013
 
