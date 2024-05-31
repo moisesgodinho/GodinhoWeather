@@ -1,0 +1,70 @@
+.header {
+  background-color: #15141c;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 100vw;
+  min-height: 15vh;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+.logo {
+  color: #fff;
+  font-size: 1.3rem;
+  padding: 10px;
+  margin-left: 5vw;
+}
+
+.search {
+  min-width: 40vw;
+}
+.inputCidade {
+  border: none;
+  outline: none;
+  padding: 15px;
+  border-radius: 15px;
+  font-size: 1.3rem;
+  color: #000000;
+  background-color: #ffffff;
+  opacity: 0.8;
+  width: 84%;
+}
+.botaoBusca {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 55px;
+  border: none;
+  outline: none;
+  padding: 10px;
+  border-radius: 15px;
+  background-color: #ffffff;
+  opacity: 0.5;
+  cursor: pointer;
+  float: right;
+  width: 15%;
+}
+
+.imgBusca {
+  width: 30px;
+}
+.currentLocalization {
+  display: flex;
+  align-items: center;
+  height: 55px;
+  font-size: 1.3rem;
+  margin-right: 5vw;
+  padding: 10px;
+  border: none;
+  outline: none;
+  border-radius: 15px;
+  background-color: #ffffff;
+  opacity: 0.5;
+  cursor: pointer;
+}
+.localizationCurrent {
+  width: 30px;
+  margin-right: 1vw;
+}
