@@ -1,0 +1,15 @@
+.container {
+  color: aliceblue;
+  width: 100%;
+  min-height: 85vh;
+  background: #15141c;
+  justify-content: flex-start;
+  padding: 2vw;
+  display: grid;
+  margin-top: 15vh;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas:
+    "currentWeather todaysHighlight todaysHighlight"
+    "forecast hourlyForecast hourlyForecast";
+  gap: 1vw;
+}
