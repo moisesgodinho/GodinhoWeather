@@ -1,0 +1,33 @@
+.forecast {
+  grid-area: forecast;
+  border-radius: 25px;
+  padding: 2vw;
+  background-color: #1c1c27;
+}
+.tittle {
+  margin-bottom: 1vh;
+}
+.listItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1vh;
+  justify-content: space-between;
+}
+.imgLi {
+  width: 3vw;
+}
+.tempMinMax {
+  display: flex;
+  align-items: center;
+  text-align: right;
+}
+
+.weekday {
+  text-align: right;
+}
+.dateString {
+  text-align: left;
+}
+.tempMinMax img {
+  margin-right: 0.5vw;
+}
