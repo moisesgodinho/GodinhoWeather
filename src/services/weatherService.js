@@ -97,7 +97,7 @@ const formatForecastWeather = (secs, offset, data) => {
             date: f.dt_txt,
             speed: metroPorSegundoParaKmHora(f.wind.speed),
             deg: f.wind.deg
-        })).slice(0, 15)
+        })).slice(0, 16)
     //daily
     const daily = Object.keys(groupedByDay).map((date) => {
         const dayData = groupedByDay[date];
@@ -111,7 +111,7 @@ const formatForecastWeather = (secs, offset, data) => {
             icon: iconUrlFromCode(dayData[0].weather[0].icon),
             date: formatToLocalTime(DateTime.fromISO(date).toSeconds(), offset, "dd 'de' LLLL'")
         };
-    }).slice(1, 6)
+    }).slice(0, 6)
 
     return { hourly, daily }
 }
