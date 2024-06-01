@@ -43,7 +43,7 @@ const HourlyForecast = ({ title, data }) => {
                   <img
                     className={imgLi}
                     style={{ transform: `rotate(${d.deg}deg)` }}
-                    src={`public/direction.png`}
+                    src={`src/assets/icons/direction.png`}
                     alt="wind direction"
                   />
                   <p className={textoLi}>{`${d.speed}km/h`}</p>
