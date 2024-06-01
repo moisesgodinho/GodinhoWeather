@@ -31,3 +31,7 @@
 .tempMinMax img {
   margin-right: 0.5vw;
 }
+.temps {
+  min-width: 1.5vw;
+  text-align: end;
+}
