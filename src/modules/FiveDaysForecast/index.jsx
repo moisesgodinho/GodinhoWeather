@@ -1,5 +1,3 @@
-"use client";
-
 import styles from "./FiveDaysForecast.module.css";
 
 const { forecast, tittle, listItem, imgLi, tempMinMax, weekday, dateString } =
