@@ -3,14 +3,15 @@
   border-radius: 25px;
   padding: 2vw;
   background-color: #1c1c27;
+  opacity: 0.7;
 }
 .tittle {
-  margin-bottom: 1vh;
+  margin-bottom: 2vh;
 }
 .listItem {
   display: flex;
   align-items: center;
-  margin-bottom: 1vh;
+  margin-bottom: 1.1vh;
   justify-content: space-between;
 }
 .imgLi {
@@ -24,14 +25,14 @@
 
 .weekday {
   text-align: right;
+  min-width: 7vw;
 }
 .dateString {
-  text-align: left;
+  margin: 0;
 }
 .tempMinMax img {
   margin-right: 0.5vw;
 }
 .temps {
-  min-width: 1.5vw;
-  text-align: end;
+  min-width: 1.7vw;
 }

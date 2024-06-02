@@ -9,13 +9,14 @@ import TodaysHighLights from "./modules/TodaysHighLights";
 import getFormattedWeatherDate from "./services/weatherService";
 
 function App() {
-  const [query, setQuery] = useState({ q: "barao de cocais" });
+  const [query, setQuery] = useState({ q: "nagatoro" });
   const [units, setUnits] = useState("metric");
   const [weather, setWeather] = useState(null);
 
   const getWeather = async () => {
     await getFormattedWeatherDate({ ...query, units }).then((data) => {
       setWeather(data);
+      console.log(data);
     });
   };
 

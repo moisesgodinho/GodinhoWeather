@@ -9,6 +9,7 @@ const {
   weekday,
   dateString,
   temps,
+  forecastContent,
 } = styles;
 
 const FiveDaysForecast = ({ title, data }) => {
@@ -16,9 +17,9 @@ const FiveDaysForecast = ({ title, data }) => {
     <>
       <section className={forecast}>
         <p className={tittle}>{title}</p>
-        <ul>
+        <div className={forecastContent}>
           {data.map((d, index) => (
-            <li key={index} className={listItem}>
+            <div key={index} className={listItem}>
               <div className={tempMinMax}>
                 <div>
                   <img
@@ -33,12 +34,15 @@ const FiveDaysForecast = ({ title, data }) => {
                   <p>{`${d.temp_min}°`}</p>
                 </div>
               </div>
-
-              <p className={dateString}>{d.date}</p>
-              <p className={weekday}>{d.title}</p>
-            </li>
+              <div className={dateString}>
+                <p>{d.date}</p>
+              </div>
+              <div className={weekday}>
+                <p>{d.title}</p>
+              </div>
+            </div>
           ))}
-        </ul>
+        </div>
       </section>
     </>
   );

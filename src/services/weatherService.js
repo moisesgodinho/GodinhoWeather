@@ -24,7 +24,10 @@ export const capitalizeAllWords = (str) => {
     return str.split(' ').map(capitalizeFirstLetter).join(' ');
 };
 
-const meterToKm = (meter) => (meter / 1000).toFixed(2)
+const meterToKm = (meter) => {
+    const km = meter / 1000;
+    return Number.isInteger(km) ? km : parseFloat(km.toFixed(2));
+};
 
 const formatToLocalTime = (
     secs,

@@ -5,11 +5,9 @@
   background-color: #1c1c27;
   opacity: 0.7;
 }
-
 .hourly {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
 }
 .hourlyContent {
   display: flex;
@@ -18,30 +16,37 @@
   background-color: #191922;
   border-radius: 15px;
   padding: 1rem 0rem;
+  min-width: 5.58vw;
 }
 .tittleHigh {
   margin-bottom: 1rem;
-  padding: 0rem 2rem 0rem 2rem;
+  padding: 0rem 2rem;
 }
 .imgLi {
   width: 3vw;
   height: 3vw;
+  pointer-events: none;
 }
 .textoLi {
   margin-top: 1rem;
 }
 .ulHourly {
-  margin-top: 1rem;
+  margin-top: 2vh;
   display: flex;
   gap: 0.5rem;
-  max-width: 100%;
 }
 .listItem {
   display: inline-flex;
-  width: 9vw;
 }
 .tempAndWind {
-  margin: 0;
-  overflow-x: visible;
-  overflow: hidden;
+  cursor: grab;
+  user-select: none;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  scroll-padding-left: 20px;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.tempAndWind::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, and Opera */
 }
