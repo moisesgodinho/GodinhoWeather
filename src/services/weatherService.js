@@ -51,7 +51,7 @@ const formatCurrent = (data) => {
         visibility
     } = data
 
-    const { main: details, icon, description } = weather[0]
+    const { main: icon, description } = weather[0]
 
     return {
         temp: Math.round(temp),
@@ -65,7 +65,6 @@ const formatCurrent = (data) => {
         sunrise: formatToLocalTime(sunrise, timezone, 'HH:mm'),
         sunset: formatToLocalTime(sunset, timezone, 'HH:mm'),
         speed,
-        details,
         icon: iconUrlFromCode(icon),
         localDate: formatToLocalTime(data.dt, timezone, "cccc, dd 'de' LLLL 'de' yyyy'"),
         formattedLocalTime: formatToLocalTime(data.dt, timezone, "'Horario Local: 'HH:mm"),
@@ -91,7 +90,7 @@ const groupByDay = (data) => {
 
 const formatForecastWeather = (secs, offset, data) => {
     const groupedByDay = groupByDay(data);
-    // hourly
+
     const hourly = data.filter((f) => f.dt > secs)
         .map(f => ({
             temp: Math.round(f.main.temp),
@@ -101,7 +100,7 @@ const formatForecastWeather = (secs, offset, data) => {
             speed: metroPorSegundoParaKmHora(f.wind.speed),
             deg: f.wind.deg
         })).slice(0, 16)
-    //daily
+
     const daily = Object.keys(groupedByDay).map((date) => {
         const dayData = groupedByDay[date];
         const temps = dayData.map(d => d.main.temp);
@@ -114,7 +113,7 @@ const formatForecastWeather = (secs, offset, data) => {
             icon: iconUrlFromCode(dayData[0].weather[0].icon),
             date: formatToLocalTime(DateTime.fromISO(date).toSeconds(), offset, "dd 'de' LLLL'")
         };
-    }).slice(0, 6)
+    }).slice(1, 6)
 
     return { hourly, daily }
 }
